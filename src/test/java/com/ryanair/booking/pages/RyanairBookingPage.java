@@ -23,7 +23,6 @@ public class RyanairBookingPage extends BasePage {
     @FindBy(how = How.CSS, using = "footer[ui-view=\"footerView\"]")
     private WebElement footer;
 
-
     @FindBy(how = How.CSS, using = "button[class=\"core-btn-ghost seat-prompt-popup-footer-btn\"]")
     private WebElement okThanksButton;
 
@@ -48,16 +47,13 @@ public class RyanairBookingPage extends BasePage {
     }
 
     public RyanairBookingPage clickContinueButton() {
-        waitForClickableElement(continueButton);
-        continueButton.click();
+        click(continueButton);
         return this;
     }
 
     public RyanairPaymentPage clickCheckoutButton() {
-        waitForClickableElement(checkoutButton);
-        checkoutButton.click();
-        waitForClickableElement(okThanksButton);
-        okThanksButton.click();
+        click(checkoutButton);
+        click(okThanksButton);
         return new RyanairPaymentPage(driver);
     }
 }

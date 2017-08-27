@@ -34,8 +34,7 @@ public class RyanairStartPage extends BasePage {
     }
 
     public RyanairStartPage clickOneWayRadio() {
-        waitForClickableElement(oneWayRadio);
-        oneWayRadio.click();
+        click(oneWayRadio);
         return new RyanairStartPage(driver);
     }
 
@@ -51,8 +50,7 @@ public class RyanairStartPage extends BasePage {
     }
 
     public RyanairStartPage clickContinueButton() {
-        waitForClickableElement(continueButton);
-        continueButton.click();
+        click(continueButton);
         return new RyanairStartPage(driver);
     }
 
@@ -65,8 +63,7 @@ public class RyanairStartPage extends BasePage {
     }
 
     public RyanairBookingPage clickLetsGoButton() {
-        waitForClickableElement(letsGoButton);
-        letsGoButton.click();
+        click(letsGoButton);
         return new RyanairBookingPage (driver);
     }
 }

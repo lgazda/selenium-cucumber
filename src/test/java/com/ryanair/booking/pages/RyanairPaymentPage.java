@@ -96,8 +96,7 @@ public class RyanairPaymentPage extends BasePage {
     }
 
     public RyanairPaymentPage clickLoginButton() {
-        waitForClickableElement(loginButton);
-        loginButton.click();
+        click(loginButton);
         return this;
     }
 
@@ -110,17 +109,15 @@ public class RyanairPaymentPage extends BasePage {
     }
 
     public RyanairPaymentPage enterPassengerDetails(String userFirstName, String userLastName) {
-        waitForClickableElement(titleDropdown);
-        titleDropdown.click();
-        waitForClickableElement(titleMr);
-        titleMr.click();
+        click(titleDropdown);
+        click(titleMr);
         firstNameInput.sendKeys(userFirstName);
         lastNameInput.sendKeys(userLastName);
         return this;
     }
 
     public RyanairPaymentPage enterContactDetails(String userPhoneNumber){
-        countryPoland.click();
+        click(countryPoland);
         phoneNumberInput.sendKeys(userPhoneNumber);
         return this;
     }
@@ -128,10 +125,9 @@ public class RyanairPaymentPage extends BasePage {
     public RyanairPaymentPage enterPaymentDetails(String userCardNumber, String userCardHolderName, String userSecurityCode){
         cardNumberInput.sendKeys(userCardNumber);
         cardTypeDropdown.click();
-        waitForClickableElement(cardTypeMasterCard);
-        cardTypeMasterCard.click();
-        expiryMonth10.click();
-        expiryYear2018.click();
+        click(cardTypeMasterCard);
+        click(expiryMonth10);
+        click(expiryYear2018);
         securityCodeInput.sendKeys(userSecurityCode);
         cardHolderNameInput.sendKeys(userCardHolderName);
         return this;
@@ -142,17 +138,17 @@ public class RyanairPaymentPage extends BasePage {
         address2Input.sendKeys(userAddress2);
         cityInput.sendKeys(userCity);
         zipCodeInput.sendKeys(userZipCode);
-        countryPolandBilling.click();
+        click(countryPolandBilling);
         return this;
     }
 
     public RyanairPaymentPage clickAcceptPolicy(){
-        acceptPolicyRadio.click();
+        click(acceptPolicyRadio);
         return this;
     }
 
     public RyanairPaymentPage clickPayNowButton(){
-        payNowButton.click();
+        click(payNowButton);
         return this;
     }
 

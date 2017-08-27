@@ -1,14 +1,9 @@
 package com.ryanair;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.concurrent.TimeUnit;
 
 
 public abstract class BasePage {
@@ -18,9 +13,14 @@ public abstract class BasePage {
         this.driver = driver;
     }
 
-    protected void waitForClickableElement(final WebElement webElement){
+    protected void waitForClickableElement(WebElement webElement){
         sleep();
         driverWait().until(ExpectedConditions.elementToBeClickable(webElement));
+    }
+
+    protected void click(WebElement webElement) {
+        waitForClickableElement(webElement);
+        webElement.click();
     }
 
     private void sleep() {
