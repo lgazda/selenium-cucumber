@@ -12,7 +12,7 @@ import cucumber.api.java.en.Then;
 
 import static junit.framework.TestCase.assertTrue;
 
-public class RyanairPaymentStepdefs extends BaseTest {
+public class RyanairPaymentSteps extends BaseTest {
     private static final String ryanairPageURL = "https://www.ryanair.com/ie/en/";
     private static final String userEmail = "ryanair123@mailinator.com";
     private static final String userPassword = "Ry@n@ir123";
