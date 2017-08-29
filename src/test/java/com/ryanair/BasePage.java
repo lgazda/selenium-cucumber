@@ -14,7 +14,7 @@ public abstract class BasePage {
     }
 
     protected void waitForClickableElement(WebElement webElement){
-        sleep();
+        sleep(); //Twmporary solusion, should be improved
         driverWait().until(ExpectedConditions.elementToBeClickable(webElement));
     }
 

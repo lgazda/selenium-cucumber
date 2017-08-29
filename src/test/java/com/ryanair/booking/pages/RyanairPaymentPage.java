@@ -4,6 +4,7 @@ import com.ryanair.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -75,6 +76,8 @@ public class RyanairPaymentPage extends BasePage {
     private WebElement cityInput;
     @FindBy(how = How.ID, using = "billingAddressPostcode")
     private WebElement zipCodeInput;
+    @FindBy(how = How.ID, using = "billingAddressCountry")
+    private WebElement billingAddressCountryDropdown;
     @FindBy(how = How.CSS, using = "option[label=\"Poland\"]")
     private WebElement countryPolandBilling;
 
@@ -138,12 +141,16 @@ public class RyanairPaymentPage extends BasePage {
         address2Input.sendKeys(userAddress2);
         cityInput.sendKeys(userCity);
         zipCodeInput.sendKeys(userZipCode);
+        click(billingAddressCountryDropdown);
         click(countryPolandBilling);
         return this;
     }
 
     public RyanairPaymentPage clickAcceptPolicy(){
-        click(acceptPolicyRadio);
+        Actions actions = new Actions(driver);
+        actions.moveToElement(acceptPolicyRadio);
+        actions.click();
+        actions.perform();
         return this;
     }
 
